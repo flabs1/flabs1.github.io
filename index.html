@@ -1,16 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Payment Page</title>
-</head>
-<body style="text-align:center; font-family:Arial; margin-top:50px;">
-  <h1>Access Content - $10</h1>
-  <p>Click below to pay securely</p>
+  <title>Premium Access</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: white;
+      text-align: center;
+      padding-top: 100px;
+    }
 
-  <a href="https://buy.stripe.com/test_6oU6oA7DUcL64Ln6p46EU00">
-    <button style="padding:15px 30px; font-size:18px;">
-      Pay $10
-    </button>
-  </a>
+    .box {
+      background: white;
+      color: black;
+      padding: 40px;
+      border-radius: 10px;
+      width: 300px;
+      margin: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    button {
+      background: #0070f3;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0059c1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>Premium Access</h1>
+    <p>Unlock exclusive content for just $10</p>
+
+    <a href="https://buy.stripe.com/test_6oU6oA7DUcL64Ln6p46EU00">
+      <button>Pay $10</button>
+    </a>
+  </div>
+
 </body>
 </html>
