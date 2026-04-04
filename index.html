@@ -4,48 +4,151 @@
   <title>Premium Access</title>
   <style>
     body {
-      font-family: Arial;
-      background: linear-gradient(to right, #1e3c72, #2a5298);
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: black;
       color: white;
-      text-align: center;
-      padding-top: 100px;
+      overflow-x: hidden;
     }
 
-    .box {
+    /* 🌌 Background */
+    .stars::after {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 2px;
       background: white;
-      color: black;
-      padding: 40px;
-      border-radius: 10px;
-      width: 300px;
+      box-shadow:
+        20px 30px white, 50px 80px white, 100px 120px white,
+        200px 300px white, 400px 200px white, 600px 500px white,
+        800px 100px white, 1000px 400px white, 1200px 600px white;
+      animation: moveStars 50s linear infinite;
+    }
+
+    @keyframes moveStars {
+      from { transform: translateY(0); }
+      to { transform: translateY(-2000px); }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
       margin: auto;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      padding: 40px 20px;
+      text-align: center;
     }
 
-    button {
-      background: #0070f3;
+    h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .highlight {
+      color: #00ffae;
+    }
+
+    p {
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 15px 40px;
+      background: linear-gradient(90deg, #ff00cc, #3333ff);
+      border-radius: 30px;
+      text-decoration: none;
       color: white;
-      border: none;
-      padding: 15px 30px;
       font-size: 18px;
-      border-radius: 5px;
-      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255,0,204,0.7);
+      transition: 0.3s;
     }
 
-    button:hover {
-      background: #0059c1;
+    .cta:hover {
+      transform: scale(1.1);
     }
+
+    .section {
+      margin-top: 60px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+
+    .price {
+      font-size: 28px;
+      color: #00ffae;
+      margin-top: 10px;
+    }
+
+    .small {
+      color: #888;
+      font-size: 13px;
+    }
+
   </style>
 </head>
+
 <body>
 
-  <div class="box">
-    <h1>Premium Access</h1>
-    <p>Unlock exclusive content for just $10</p>
+<div class="stars"></div>
 
-    <a href="https://buy.stripe.com/test_6oU6oA7DUcL64Ln6p46EU00">
-      <button>Pay $10</button>
+<div class="container">
+
+  <!-- 🔥 HERO -->
+  <h1>Unlock the <span class="highlight">Hidden System</span></h1>
+  <p>
+    This is not for everyone. Only those who know how to use it properly will benefit.
+  </p>
+
+  <p>
+    What you’re about to access is designed to give you an edge most people never discover.
+  </p>
+
+  <div class="price">$10 One-Time Access</div>
+
+  <a href="YOUR_PAYMENT_LINK" class="cta">
+    Get Instant Access
+  </a>
+
+  <p class="small">Limited availability • Instant delivery</p>
+
+  <!-- 💎 WHAT YOU GET -->
+  <div class="section">
+    <h2>What You’ll Get</h2>
+
+    <div class="card">✔ Step-by-step breakdown</div>
+    <div class="card">✔ Simple system anyone can follow</div>
+    <div class="card">✔ Methods that actually work</div>
+  </div>
+
+  <!-- 🔥 WHY IT WORKS -->
+  <div class="section">
+    <h2>Why This Works</h2>
+    <p>
+      Most people overcomplicate things. This strips everything down to what actually matters.
+    </p>
+  </div>
+
+  <!-- ⚡ FINAL PUSH -->
+  <div class="section">
+    <h2>Don’t Miss Out</h2>
+    <p>
+      You’re one step away from accessing something most people never will.
+    </p>
+
+    <a href="https://buy.stripe.com/test_6oU6oA7DUcL64Ln6p46EU00" class="cta">
+      Unlock Now
     </a>
   </div>
+
+</div>
 
 </body>
 </html>
