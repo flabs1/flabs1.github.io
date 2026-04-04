@@ -1,48 +1,136 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Access Granted</title>
+  <title>Processing...</title>
   <style>
     body {
-      font-family: Arial;
-      background: #f4f6f8;
-      text-align: center;
-      padding-top: 100px;
-    }
-
-    .box {
-      background: white;
-      padding: 40px;
-      width: 350px;
-      margin: auto;
-      border-radius: 10px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-
-    a {
-      display: inline-block;
-      margin-top: 20px;
-      background: #28a745;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: black;
       color: white;
-      padding: 12px 25px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 16px;
+      overflow: hidden;
     }
 
-    a:hover {
-      background: #218838;
+    /* 🌌 Stars */
+    .stars::after {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      box-shadow:
+        20px 30px white, 50px 80px white, 100px 120px white,
+        200px 300px white, 400px 200px white, 600px 500px white,
+        800px 100px white, 1000px 400px white, 1200px 600px white;
+      animation: moveStars 50s linear infinite;
     }
+
+    @keyframes moveStars {
+      from { transform: translateY(0); }
+      to { transform: translateY(-2000px); }
+    }
+
+    /* 🔄 Loading screen */
+    .loading {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: black;
+      z-index: 10;
+    }
+
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 5px solid rgba(255,255,255,0.2);
+      border-top: 5px solid #00ffae;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    /* 🔥 Main content */
+    .container {
+      display: none;
+      position: relative;
+      z-index: 2;
+      max-width: 500px;
+      margin: 100px auto;
+      padding: 50px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(20px);
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 50px rgba(123,47,247,0.4);
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .check {
+      font-size: 40px;
+      color: #00ffae;
+      margin-bottom: 10px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 15px 35px;
+      background: linear-gradient(90deg, #ff00cc, #3333ff);
+      border-radius: 30px;
+      text-decoration: none;
+      color: white;
+      box-shadow: 0 0 20px rgba(255,0,204,0.7);
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+    }
+
   </style>
 </head>
+
 <body>
 
-  <div class="box">
-    <h1>✅ Payment Successful</h1>
-    <p>Your premium access is ready.</p>
+<div class="stars"></div>
 
-    <a href="https://flabs1.github.io/premium.html">Access Your Content</a>
-  </div>
+<!-- 🔄 Loading Screen -->
+<div class="loading" id="loading">
+  <div class="spinner"></div>
+  <h2>Verifying Payment...</h2>
+  <p>Please wait, do not refresh</p>
+</div>
+
+<!-- ✅ Success Content -->
+<div class="container" id="content">
+  <div class="check">✔</div>
+  <h1>Payment Successful</h1>
+  <p>Your premium access has been unlocked.</p>
+
+  <p>DM <strong>Thing 1</strong> with your receipt to receive your guide.</p>
+
+  <a href="#" class="button">Contact Now</a>
+</div>
+
+<script>
+  setTimeout(() => {
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("content").style.display = "block";
+  }, 5000); // 3 seconds
+</script>
 
 </body>
 </html>
